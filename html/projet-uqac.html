@@ -11,33 +11,37 @@
     />
   </head>
   <body>
-    <nav>
-      <div class="nav-links">
-        <a href="/html/index.html">Accueil</a>
-        <a href="#projets">BTS</a>
-        <a href="/html/projet-uqac.html">UQAC</a>
-        <a href="#contact">Perso</a>
+    <nav class="main-navbar">
+      <div class="nav-container">
+        <div class="brand">DAVID CHALONS</div>
+        <ul class="nav-links">
+          <li><a href="/html/index.html">Accueil</a></li>
+          <li><a href="index.html#projets">BTS</a></li>
+          <li><a href="/html/projet-uqac.html">UQAC</a></li>
+          <li><a href="index.html#contact">Perso</a></li>
+        </ul>
       </div>
     </nav>
 
-    <header class="uqac-banner">
-      <img src="../image/uqac-campus.jpg" alt="Campus UQAC" />
+    <header class="uqac-hero">
+      <div class="hero-wrapper">
+        <div class="hero-image-box">
+          <img src="../image/uqac-campus.jpg" alt="Campus UQAC" />
+        </div>
+        <div class="hero-text-card">
+          <h1>Mes projets UQAC</h1>
+          <p>
+            Bienvenue sur la page des projets que j'ai réalisés lors de mes
+            années à l'Université du Québec à Chicoutimi.
+          </p>
+        </div>
+      </div>
     </header>
 
-    <section class="section-pale-blue text-center">
-      <div class="container">
-        <h1>Mes projets UQAC</h1>
-        <p class="intro-text">
-          Bienvenue sur la page des projets que j'ai réalisés lors de mes années
-          à l'Université du Québec à Chicoutimi.
-        </p>
-      </div>
-    </section>
-
-    <section class="section-white">
+    <section class="section-white reveal">
       <div class="container project-item-detail">
         <img
-          src="../image/virus-digestive.jpg"
+          src="../image/virus-digestive.png"
           alt="Digestive Defense"
           class="project-main-img"
         />
@@ -56,16 +60,25 @@
             améliorer vos défenses.
           </p>
           <div class="project-links">
-            <a href="#">Lien vers le One pager</a>
-            <a href="#">Lien vers le document principal</a>
-            <a href="#">Lien vers le Prototype</a>
+            <p><a href="../doc/onePager.pdf">Lien vers le One pager</a></p>
+            <p>
+              <a href="../doc/documentPrincipal.pdf"
+                >Lien vers le document principal</a
+              >
+            </p>
+            <p>
+              <a
+                href="https://www.canva.com/design/DAGYQ2Ohdg4/nJsewlK89FglMMlOaLL3nA/view?mode=prototype"
+                >Lien vers le Prototype</a
+              >
+            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section-white">
-      <div class="container project-item-detail reverse">
+    <section class="section-white reveal">
+      <div class="container project-item-detail">
         <img
           src="../image/meteo-site.jpg"
           alt="Site Météo"
@@ -84,7 +97,26 @@
       </div>
     </section>
 
-    <section class="section-white">
+    <section class="section-white reveal">
+      <div class="container project-item-detail">
+        <img
+          src="../image/casse-brique.gif"
+          alt="Bubble Bobble Prototype"
+          class="project-main-img"
+        />
+        <div class="project-text">
+          <h2>
+            Premier Projet de Prototypage de jeux avec un langage de script
+          </h2>
+          <p>
+            Au cours de mon cours de Prototypage de jeux avec un langage de
+            script, j’ai dû créer un petit prototype de casse-brique.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-white reveal">
       <div class="container project-item-detail">
         <img
           src="../image/bubble-bobble.jpg"
@@ -99,8 +131,14 @@
             projet final.
           </p>
           <div class="project-links">
-            <a href="#">Lien vers la diapositive</a>
-            <a href="#">Lien vers le jeu (Windows)</a>
+            <p>
+              <a href="/doc/BUBBLE-BOBBLE.pptx">Lien vers la diapositive</a>
+            </p>
+            <p>
+              <a href="https://flutzzie.itch.io/bubblebobble"
+                >Lien vers le jeu (Windows)</a
+              >
+            </p>
           </div>
         </div>
       </div>
@@ -111,4 +149,25 @@
       <p>© 2025 par David Chalons. Créé avec passion.</p>
     </footer>
   </body>
+
+  <script>
+    function reveal() {
+      var reveals = document.querySelectorAll(".reveal");
+      for (var i = 0; i < reveals.length; i++) {
+        var windowHeight = window.innerHeight;
+        var elementTop = reveals[i].getBoundingClientRect().top;
+        var elementVisible = 150; // Déclenche l'effet 150px avant l'apparition
+
+        if (elementTop < windowHeight - elementVisible) {
+          reveals[i].classList.add("active");
+        }
+      }
+    }
+
+    // Écoute le défilement de la souris
+    window.addEventListener("scroll", reveal);
+
+    // Lance une fois au chargement pour les éléments déjà visibles
+    reveal();
+  </script>
 </html>

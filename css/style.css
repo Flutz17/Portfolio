@@ -7,9 +7,10 @@
 
 body {
   font-family: "Open Sans", sans-serif;
-  color: #333;
+  color: #1f1e1e;
   line-height: 1.6;
-  background-color: #fff;
+  background-color: #f4f4f4; /* Gris clair pour le fond */
+  padding-top: 70px; /* Espace pour la navbar fixe */
 }
 
 h1,
@@ -42,6 +43,7 @@ a {
 .text-grey {
   color: #aaa;
 }
+
 .subtitle {
   font-style: italic;
   font-weight: 300;
@@ -54,15 +56,15 @@ a {
 .section-pale-blue {
   background-color: #e3f2fd;
   padding: 4rem 0;
-} /* Le bleu très clair */
+}
 .section-white {
-  background-color: #ffffff;
-  padding: 4rem 0;
+  background-color: transparent; /* Pour voir le gris du body derrière */
+  padding: 20px 0; /* Petit espace entre les blocs */
 }
 .section-grey {
   background-color: #dddddd;
   padding: 4rem 0;
-} /* Gris moyen */
+}
 .section-black {
   background-color: #000000;
   padding: 4rem 0;
@@ -73,11 +75,11 @@ a {
   padding: 3rem 0;
 }
 
-/* --- HEADER / HERO --- */
+/* --- HEADER / HERO (ACCUEIL) --- */
 header {
   position: relative;
   width: 100%;
-  height: 100vh; /* Prend tout l'écran */
+  height: 100vh;
   min-height: 600px;
   background-color: #000;
 }
@@ -100,25 +102,19 @@ nav {
   text-transform: uppercase;
 }
 
-.nav-links a:hover {
-  color: #ccc;
-}
-
 .hero-split {
   display: flex;
   height: 100%;
 }
-
 .hero-image {
   width: 50%;
   height: 100%;
   overflow: hidden;
 }
-
 .hero-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* L'image remplit la zone gauche */
+  object-fit: cover;
 }
 
 .hero-content {
@@ -127,7 +123,6 @@ nav {
   align-items: center;
   justify-content: center;
   background: #111;
-  /* Petit effet de lignes si tu veux ajouter une image de fond plus tard */
   background-image: repeating-linear-gradient(
     45deg,
     #1a1a1a 0,
@@ -141,17 +136,18 @@ nav {
 
 .hero-text-box {
   text-align: center;
-  border: 4px solid rgba(255, 255, 255, 0.1); /* Cadre subtil */
+  border: 4px solid rgba(255, 255, 255, 0.1);
   padding: 3rem;
 }
 
-.hero-content h1 {
-  font-size: 3rem;
-  font-weight: 300;
-  line-height: 1.2;
-  margin-bottom: 1rem;
+.hero-text-card h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: #000 !important; /* Force la couleur noire pour le voir sur le bleu clair */
+  position: relative;
+  z-index: 5;
 }
-
 .separator {
   width: 50px;
   height: 2px;
@@ -159,29 +155,11 @@ nav {
   margin: 10px auto;
 }
 
-/* --- SECTION RÉSUMÉ --- */
-.content-box {
-  max-width: 700px;
-  margin: 0 auto;
-}
-.btn-link {
-  display: inline-block;
-  margin-top: 15px;
-  color: #1976d2; /* Bleu lien */
-  border-bottom: 1px solid #1976d2;
-}
-
-/* --- LISTE JOBS (Timeline) --- */
+/* --- JOBS & PROJETS (ACCUEIL) --- */
 .job-item {
   margin-bottom: 2rem;
   padding-left: 1rem;
-  border-left: 2px solid #ccc; /* Ligne verticale à gauche */
-}
-
-.job-item h3 {
-  font-size: 1rem;
-  font-weight: 700;
-  margin-bottom: 5px;
+  border-left: 2px solid #ccc;
 }
 .date {
   font-size: 0.85rem;
@@ -189,62 +167,17 @@ nav {
   margin-bottom: 10px;
   display: block;
 }
-.section-black .date {
-  color: #bbb;
-} /* Date plus claire sur fond noir */
 
-/* --- ÉDUCATION --- */
-.education-list {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-.edu-item {
-  display: flex;
-  gap: 20px;
-}
-.edu-date {
-  font-weight: 700;
-  min-width: 100px;
-  text-align: right;
-  color: #fff;
-}
-.edu-details h3 {
-  font-size: 1.1rem;
-  color: #fff;
-}
-.edu-details p {
-  color: #ccc;
-  font-size: 0.9rem;
-}
-
-/* --- GAME JAMS --- */
-.btn-primary {
-  display: inline-block;
-  background-color: #fff;
-  color: #000;
-  padding: 10px 30px;
-  font-weight: bold;
-  border: 1px solid #000;
-}
-.btn-primary:hover {
-  background-color: #000;
-  color: #fff;
-}
-
-/* --- PROJETS --- */
 .projects-grid {
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
-
 .project-card {
   display: flex;
   align-items: center;
   gap: 2rem;
 }
-
 .project-img {
   width: 250px;
   height: 150px;
@@ -252,16 +185,10 @@ nav {
   overflow: hidden;
   flex-shrink: 0;
 }
-
 .project-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-.project-info h3 {
-  margin-bottom: 1rem;
-  font-size: 1rem;
 }
 
 .btn-outline {
@@ -269,22 +196,90 @@ nav {
   padding: 5px 15px;
   font-size: 0.8rem;
 }
-
 .btn-outline:hover {
   background: #333;
   color: white;
 }
 
-/* --- FOOTER --- */
-footer {
+/* --- STYLES SPÉCIFIQUES PAGE UQAC --- */
+.nav-dark {
   background-color: #000;
-  color: #666;
-  text-align: center;
-  padding: 2rem;
-  font-size: 0.8rem;
+  color: #fff;
+  padding: 20px;
+}
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.brand {
+  font-weight: 700;
+  letter-spacing: 2px;
 }
 
-/* --- RESPONSIVE MOBILE --- */
+/* Ajoute cette marge au tout début de tes styles de page */
+.uqac-hero {
+  padding-top: 100px; /* Ajuste cette valeur selon la hauteur de ta barre noire */
+  background-color: #fff;
+}
+.hero-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.hero-image-box {
+  width: 60%;
+  z-index: 1;
+}
+.hero-image-box img {
+  width: 100%;
+  display: block;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.hero-text-card {
+  width: 50%;
+  background-color: #e3f2fd;
+  padding: 60px 40px;
+  margin-left: -10%;
+  z-index: 2;
+}
+
+.uqac-project {
+  padding: 80px 20px;
+  border-bottom: 1px solid #eee;
+}
+.container-small {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+.project-visual img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 4px;
+  margin-bottom: 30px;
+}
+
+.links-stack a {
+  display: block;
+  color: #000;
+  text-decoration: underline;
+  margin-bottom: 5px;
+}
+
+.footer-uqac {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+/* --- RESPONSIVE MOBILE (TOUT EN BAS) --- */
 @media (max-width: 768px) {
   .hero-split {
     flex-direction: column;
@@ -294,13 +289,22 @@ footer {
     width: 100%;
     height: 50vh;
   }
-  .edu-item {
-    flex-direction: column;
-    text-align: center;
+  .nav-links {
+    display: none;
   }
-  .edu-date {
+
+  /* Pour la page UQAC sur Mobile */
+  .hero-wrapper {
+    flex-direction: column;
+  }
+  .hero-image-box,
+  .hero-text-card {
+    width: 100%;
+    margin-left: 0;
+  }
+  .hero-text-card {
     text-align: center;
-    margin-bottom: 5px;
+    padding: 30px 20px;
   }
   .project-card {
     flex-direction: column;
@@ -310,103 +314,128 @@ footer {
     width: 100%;
     height: 200px;
   }
-  .nav-links {
-    display: none;
-  } /* On cache le menu sur mobile pour simplifier */
+}
+/* --- NAVIGATION PRINCIPALE FIXE --- */
+.main-navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #000;
+  z-index: 1000; /* Force la barre à rester TOUJOURS au-dessus du reste */
+  height: 70px; /* Assure-toi que cette hauteur est fixe */
+}
 
-  /* --- STYLES PAGE UQAC --- */
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
 
-  .nav-interne {
-    background: #000;
-    padding: 15px 40px;
-  }
+.brand {
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-family: "Raleway", sans-serif;
+}
 
-  .nav-title {
-    color: white;
-    margin-left: 20px;
-    font-family: "Raleway", sans-serif;
-    font-weight: 700;
-  }
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
 
-  .uqac-banner {
-    width: 100%;
-    height: 300px;
-    overflow: hidden;
-  }
+.nav-links a {
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: color 0.3s;
+}
 
-  .uqac-banner img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+.nav-links a:hover {
+  color: #e3f2fd; /* Un bleu très clair au survol */
+}
 
-  .intro-text {
-    max-width: 800px;
-    margin: 0 auto;
-    font-size: 1.2rem;
-  }
+/* --- AJUSTEMENT IMPORTANT --- */
+/* Comme la barre est "fixed", elle ne prend plus de place dans le flux. 
+   Il faut ajouter une marge en haut de tes pages pour que le contenu ne soit pas caché SOUS la barre. */
 
-  .project-item-detail {
-    display: flex;
-    align-items: center;
-    gap: 50px;
-    padding: 60px 0;
-    border-bottom: 1px solid #eee;
-  }
+body {
+  padding-top: 70px; /* Doit être égal à la hauteur de la navbar */
+}
 
-  /* Permet d'inverser l'image et le texte pour le projet 2 */
-  .project-item-detail.reverse {
-    flex-direction: row-reverse;
-  }
+/* On enlève les anciens styles de nav qui pourraient créer des conflits */
+.nav-dark,
+.nav-interne {
+  display: none;
+}
+.project-main-img {
+  width: 100%;
+  max-width: 400px;
+  height: 250px;
+  object-fit: cover; /* On utilise cover pour remplir le rectangle proprement */
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
 
-  .project-main-img {
-    width: 450px;
-    border-radius: 5px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  }
+.project-main-img:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
 
-  .project-text h2 {
-    margin-bottom: 20px;
-    font-size: 1.8rem;
-    text-align: left;
-  }
+/* --- EFFET D'APPARITION (FADE-IN) --- */
+/* On prépare l'état caché */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
 
-  .project-text p {
-    margin-bottom: 15px;
-  }
+/* L'état visible (activé par JS plus bas) */
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-  .project-links {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-  }
+/* --- RAFFINEMENT DES SECTIONS --- */
+.project-item-detail {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  padding: 40px; /* Espace à l'intérieur du bloc */
+  margin-bottom: 40px; /* Espace entre les blocs */
+  background-color: #fff; /* Fond blanc du bloc */
+  border-radius: 15px; /* Bords arrondis */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Ombre très légère */
+  border-bottom: none; /* On enlève l'ancienne bordure de ligne */
+}
 
-  .project-links a {
-    color: #1976d2;
-    text-decoration: underline;
-    font-size: 0.9rem;
-  }
+.project-text h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #000; /* On remet en noir simple pour la clarté */
+  text-align: left;
+}
 
-  .footer-dark {
-    background: #000;
-    color: white;
-    text-align: center;
-    padding: 40px 0;
-  }
+.project-links a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 16px;
+  background: #f8f9fa;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #333;
+  transition: 0.3s;
+}
 
-  /* Mobile */
-  @media (max-width: 768px) {
-    .project-item-detail,
-    .project-item-detail.reverse {
-      flex-direction: column;
-      text-align: center;
-    }
-    .project-main-img {
-      width: 100%;
-    }
-    .project-text h2 {
-      text-align: center;
-    }
-  }
+.project-links a:hover {
+  background: #000;
+  color: #fff;
+  border-color: #000;
 }
