@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Détails PPE 1 - David Chalons</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Open+Sans:wght@300;400;600&family=Raleway:wght@300;700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="dark-theme">
+    <nav class="main-navbar">
+      <div class="nav-container">
+        <div class="brand">DAVID CHALONS</div>
+        <ul class="nav-links">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="bts.html" class="active">BTS</a></li>
+          <li><a href="projet-uqac.html">UQAC</a></li>
+          <li><a href="perso.html">Perso</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <header>
+      <div class="hero-split">
+        <div class="hero-image">
+          <img src="../image/ppe1.avif" alt="Maison des Ligues" />
+        </div>
+
+        <div class="hero-content">
+          <div class="hero-text-box">
+            <h1>PPE 1<br />MAISON DES LIGUES</h1>
+            <div class="separator-gold"></div>
+            <p>
+              Création d'un site internet et modernisation de l'infrastructure
+              réseau pour la M2L.
+            </p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section>
+      <div class="container">
+        <article class="project-detail-card vertical reveal">
+          <div class="detail-img">
+            <img src="../image/ppe1-1.avif" alt="Site Web M2L" />
+          </div>
+          <div class="detail-content">
+            <h2>MISSION 1 : LE PORTAIL WEB</h2>
+            <p class="tech-tag">HTML / CSS / MAQUETTAGE</p>
+            <p>
+              L'objectif était de créer un portail web statique pour la Maison
+              des Ligues (M2L). Le site devait présenter les services, la
+              structuration des locaux et le personnel.
+            </p>
+            <p>
+              J'ai également développé un
+              <strong>annuaire des ligues</strong> (version statique) permettant
+              d'accéder aux informations de 12 ligues réparties sur plusieurs
+              départements (Meurthe-et-Moselle, Meuse, Moselle, Vosges).
+            </p>
+          </div>
+        </article>
+
+        <article class="project-detail-card vertical reveal">
+          <div class="detail-img">
+            <img src="../image/ppe1-2.avif" alt="Schéma Réseau M2L" />
+          </div>
+          <div class="detail-content">
+            <h2>MISSION 2 : INFRASTRUCTURE RÉSEAU</h2>
+            <p class="tech-tag">CISCO / RÉSEAU / DEVIS</p>
+            <p>
+              Analyse des besoins pour le passage du réseau en
+              <strong>Gigabit</strong>. J'ai réalisé l'étude de l'installation
+              physique, le choix du matériel (Câbles Fibre Optique, Commutateurs
+              Cisco SG220-26) et défini le plan d'adressage IP (172.16.0.0/16).
+            </p>
+            <p>
+              J'ai également établi un devis complet incluant les frais
+              d'installation pour un total de <strong>5 162,69 € TTC</strong>.
+            </p>
+          </div>
+          <div class="detail-img">
+            <img src="../image/ppe1-3.avif" alt="Schéma Réseau M2L" />
+          </div>
+        </article>
+
+        <div class="content-box reveal" style="margin-top: 4rem">
+          <h2 class="text-center" style="margin-bottom: 2rem">
+            COMPÉTENCES VALIDÉES
+          </h2>
+          <div
+            style="
+              display: flex;
+              flex-wrap: wrap;
+              gap: 20px;
+              justify-content: center;
+            "
+          >
+            <span class="btn-outline"
+              >A1.1.1 Analyse du cahier des charges</span
+            >
+            <span class="btn-outline"
+              >A4.1.2 Conception de l'interface utilisateur</span
+            >
+            <span class="btn-outline">A4.1.5 Prototypage de composants</span>
+            <span class="btn-outline">A5.1.3 Suivi de configuration</span>
+            <span class="btn-outline">A1.2.1 Choix de solution technique</span>
+          </div>
+        </div>
+
+        <div class="text-center" style="margin-top: 3rem">
+          <a href="bts.html" class="btn-link">← Retour aux projets BTS</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>Email : david.chalons.com@gmail.com</p>
+      <p>© 2025 David Chalons.</p>
+    </footer>
+
+    <script>
+      function reveal() {
+        var reveals = document.querySelectorAll(".reveal");
+        for (var i = 0; i < reveals.length; i++) {
+          var windowHeight = window.innerHeight;
+          var elementTop = reveals[i].getBoundingClientRect().top;
+          var elementVisible = 100;
+          if (elementTop < windowHeight - elementVisible) {
+            reveals[i].classList.add("active");
+          }
+        }
+      }
+      window.addEventListener("scroll", reveal);
+      reveal();
+    </script>
+  </body>
+</html>

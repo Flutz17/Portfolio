@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
@@ -6,20 +6,20 @@
     <title>David Chalons - Portfolio</title>
     <link rel="stylesheet" href="../css/style.css" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Raleway:wght@300;700;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Open+Sans:wght@300;400;600&family=Raleway:wght@300;700;900&display=swap"
       rel="stylesheet"
     />
   </head>
-  <body>
+  <body class="dark-theme">
     <header id="accueil">
       <nav class="main-navbar">
         <div class="nav-container">
           <div class="brand">DAVID CHALONS</div>
           <ul class="nav-links">
-            <li><a href="/html/index.html">Accueil</a></li>
-            <li><a href="index.html#projets">BTS</a></li>
-            <li><a href="/html/projet-uqac.html">UQAC</a></li>
-            <li><a href="index.html#contact">Perso</a></li>
+            <li><a href="index.html" class="active">Accueil</a></li>
+            <li><a href="bts.html">BTS</a></li>
+            <li><a href="projet-uqac.html">UQAC</a></li>
+            <li><a href="perso.html">Perso</a></li>
           </ul>
         </div>
       </nav>
@@ -32,14 +32,14 @@
         <div class="hero-content">
           <div class="hero-text-box">
             <h1>DAVID<br />CHALONS</h1>
-            <div class="separator"></div>
+            <div class="separator-gold"></div>
             <p>Bienvenue sur mon portfolio !</p>
           </div>
         </div>
       </div>
     </header>
 
-    <section id="resume" class="section-pale-blue">
+    <section id="resume">
       <div class="container text-center">
         <h2>RÉSUMÉ</h2>
         <div class="content-box">
@@ -47,7 +47,7 @@
             Curieux, calme et passionné par le développement de jeux vidéo, je
             possède une solide expérience en programmation et en conception de
             projets ludiques. Je combine des compétences techniques (C++, React,
-            Unreal, etc.) avec une forte capacité à travailler en équipe,
+            Unreal, Godot, etc.) avec une forte capacité à travailler en équipe,
             apprendre rapidement et m’adapter à différents contextes. Ma
             participation à des Game Jams, à des projets collaboratifs et mes
             années d’étude m’ont permis de me forger un profil polyvalent et
@@ -56,13 +56,14 @@
           <a
             href="https://www.linkedin.com/in/david-chalons-26928a1a4/"
             class="btn-link"
+            target="_blank"
             >Linkedin</a
           >
         </div>
       </div>
     </section>
 
-    <section id="experience" class="section-white">
+    <section id="experience">
       <div class="container">
         <h2 class="text-center">EXPÉRIENCES PROFESSIONNELLES</h2>
         <p class="subtitle text-center">Mon histoire à ce jour</p>
@@ -109,7 +110,7 @@
       </div>
     </section>
 
-    <section id="autres" class="section-grey">
+    <section id="autres">
       <div class="container">
         <h2 class="text-center">AUTRES EXPÉRIENCES</h2>
         <p class="subtitle text-center">
@@ -117,6 +118,15 @@
         </p>
 
         <div class="timeline">
+          <div class="job-item">
+            <h3>SERVICE CLIENT, BOUTIQUE L'IMAGINAIRE</h3>
+            <span class="date">Novembre 2025 - Janvier 2026</span>
+            <p>
+              Service a la clientèle dans une boutique de de jeux de société,
+              librairie et jouets. Accueil des clients, gestion des stocks.
+            </p>
+          </div>
+
           <div class="job-item">
             <h3>GERANT, SPIRIT HALLOWEEN</h3>
             <span class="date">Aout 2025 - Novembre 2025</span>
@@ -128,16 +138,6 @@
           </div>
 
           <div class="job-item">
-            <h3>PLONGEUR, BUSSBOY ET SOUTIEN, COMPLEXE LE TRIANGLE</h3>
-            <span class="date">Depuis 2022</span>
-            <p>
-              Travail en restauration, gestion de la pression en cuisine,
-              entraide d’équipe, propreté et efficacité. Développement d’un bon
-              sens de l’observation et de l’organisation.
-            </p>
-          </div>
-
-          <div class="job-item">
             <h3>COORDONNATEUR EXTERNE, AGECRLI</h3>
             <span class="date">Janvier 2024 – Juin 2024</span>
             <p>
@@ -145,6 +145,19 @@
               Rivière-du-Loup. Organisation d’événements, communication entre
               les étudiants et l’administration, participation active à la vie
               étudiante.
+            </p>
+          </div>
+
+          <div class="job-item">
+            <h3>
+              PLONGEUR, BUSSBOY, SOUTIEN ET CREATION DE MENU, COMPLEXE LE
+              TRIANGLE
+            </h3>
+            <span class="date">Février 2022 - Janvier 2026</span>
+            <p>
+              Travail en restauration, gestion de la pression en cuisine,
+              entraide d’équipe, propreté et efficacité. Développement d’un bon
+              sens de l’observation et de l’organisation.
             </p>
           </div>
 
@@ -161,10 +174,10 @@
       </div>
     </section>
 
-    <section id="education" class="section-black">
+    <section id="education">
       <div class="container">
-        <h2 class="text-center text-white">ÉDUCATION</h2>
-        <p class="subtitle text-center text-grey">Mon apprentissage</p>
+        <h2 class="text-center">ÉDUCATION</h2>
+        <p class="subtitle text-center">Mon apprentissage</p>
 
         <div class="education-list">
           <div class="job-item">
@@ -253,7 +266,7 @@
       </div>
     </section>
 
-    <section id="gamejams" class="section-light-grey">
+    <section id="gamejams">
       <div class="container text-center">
         <h2>GAME JAMS</h2>
         <p>
@@ -267,50 +280,46 @@
       </div>
     </section>
 
-    <section id="projets" class="section-white">
+    <section id="projets">
       <div class="container">
         <h2 class="text-center">MES NOMBREUX PROJETS</h2>
 
         <div class="projects-grid">
           <div class="project-card">
-            <div class="project-img">
-              <img src="../image/projet1.jpg" alt="PPE4" />
-            </div>
+            <a href="bts.html" class="project-img-link">
+              <div class="project-img">
+                <img src="../image/projet1.jpg" alt="Projets BTS" />
+              </div>
+            </a>
             <div class="project-info">
-              <h3>LISTE DES PPE (BTS)</h3>
-              <a href="#" class="btn-outline">Plus d'information</a>
+              <h3>BTS SIO</h3>
+              <a href="bts.html" class="btn-outline">Plus d'information</a>
             </div>
           </div>
 
           <div class="project-card">
-            <div class="project-img">
-              <img src="../image/projet2.jpg" alt="Batiment" />
-            </div>
+            <a href="projet-uqac.html" class="project-img-link">
+              <div class="project-img">
+                <img src="../image/projet3.jpg" alt="Projets UQAC" />
+              </div>
+            </a>
             <div class="project-info">
-              <h3>STAGE À LA DGA</h3>
-              <a href="#" class="btn-outline">Plus d'information</a>
-            </div>
-          </div>
-
-          <div class="project-card">
-            <div class="project-img">
-              <img src="../image/projet3.jpg" alt="Joystick" />
-            </div>
-            <div class="project-info">
-              <h3>PROJET UQAC</h3>
-              <a href="/html/projet-uqac.html" class="btn-outline"
+              <h3>UQAC</h3>
+              <a href="projet-uqac.html" class="btn-outline"
                 >Plus d'information</a
               >
             </div>
           </div>
 
           <div class="project-card">
-            <div class="project-img">
-              <img src="../image/projet4.png" alt="Felis" />
-            </div>
+            <a href="perso.html" class="project-img-link">
+              <div class="project-img">
+                <img src="../image/projet4.png" alt="Projets Perso" />
+              </div>
+            </a>
             <div class="project-info">
-              <h3>PROJET PERSO</h3>
-              <a href="#" class="btn-outline">Plus d'information</a>
+              <h3>PERSO</h3>
+              <a href="perso.html" class="btn-outline">Plus d'information</a>
             </div>
           </div>
         </div>
@@ -319,7 +328,7 @@
 
     <footer>
       <p>Email : david.chalons.com@gmail.com</p>
-      <p>© 2025 David Chalons. Créé par moi-même.</p>
+      <p>© 2025 David Chalons.</p>
     </footer>
   </body>
 </html>

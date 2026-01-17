@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stage DGA - David Chalons</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Open+Sans:wght@300;400;600&family=Raleway:wght@300;700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="dark-theme">
+    <nav class="main-navbar">
+      <div class="nav-container">
+        <div class="brand">DAVID CHALONS</div>
+        <ul class="nav-links">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="bts.html" class="active">BTS</a></li>
+          <li><a href="projet-uqac.html">UQAC</a></li>
+          <li><a href="perso.html">Perso</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <header>
+      <div class="hero-split">
+        <div class="hero-image">
+          <img src="../image/stage-dga.avif" alt="DGA Techniques Terrestres" />
+        </div>
+
+        <div class="hero-content">
+          <div class="hero-text-box">
+            <h1>STAGE DGA<br />BTS SIO</h1>
+            <div class="separator-gold"></div>
+            <p>
+              Développement d'outils de visualisation de données (Graphes 3D) au
+              sein de la Direction Générale de l'Armement.
+            </p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section>
+      <div class="container">
+        <article class="project-detail-card vertical reveal">
+          <div class="detail-content">
+            <h2>PRÉSENTATION DE LA DGA TT</h2>
+            <p class="tech-tag">DÉFENSE / EXPERTISE / ESSAIS</p>
+            <p>
+              La
+              <strong
+                >Direction Générale de l'Armement Techniques Terrestres</strong
+              >
+              (DGA TT) est le centre de référence pour l'architecture,
+              l'expertise, la simulation et les essais des systèmes terrestres
+              de Défense.
+            </p>
+            <p>
+              Basé à Bourges (polygone de 10 000 hectares) et Angers, le centre
+              teste missiles, drones, robotique et munitions pour toutes les
+              armées.
+            </p>
+          </div>
+        </article>
+
+        <article class="project-detail-card vertical reveal">
+          <div class="detail-img">
+            <img src="../image/stage-1.avif" alt="Visualisation 3DJS" />
+          </div>
+          <div class="detail-content">
+            <h2>DÉROULEMENT DU STAGE (PROJETS)</h2>
+            <p class="tech-tag">SYMFONY / 3DJS / AG-GRID</p>
+            <p>
+              Le stage, réalisé en télétravail, s'est articulé autour de la
+              création d'une application de cartographie des Systèmes
+              d'Information (SI).
+            </p>
+            <ul
+              style="
+                text-align: left;
+                max-width: 800px;
+                margin: 0 auto;
+                color: #ccc;
+                list-style-type: disc;
+                padding-left: 20px;
+              "
+            >
+              <li style="margin-bottom: 10px">
+                <strong>Backend (Symfony & Doctrine) :</strong> Création de
+                tables pour gérer les SI, les couleurs et les dépendances entre
+                systèmes.
+              </li>
+              <li style="margin-bottom: 10px">
+                <strong>Visualisation 3D (3DJS) :</strong> Développement d'un
+                graphe interactif représentant les liens et dépendances entre
+                les SI.
+              </li>
+              <li style="margin-bottom: 10px">
+                <strong>Algorithme :</strong> Génération aléatoire de liens (0 à
+                4 dépendances) via des fixtures pour tester la robustesse du
+                graphe.
+              </li>
+              <li style="margin-bottom: 10px">
+                <strong>Interface :</strong> Intégration d'un tableau de données
+                dynamique avec <strong>ag-grid</strong>.
+              </li>
+            </ul>
+            <div class="detail-img">
+              <img src="../image/stage-2.avif" alt="DGA Bourges" />
+            </div>
+          </div>
+        </article>
+
+        <div class="content-box reveal" style="margin-top: 4rem">
+          <div class="detail-img">
+            <img src="../image/stage-3.avif" alt="DGA Bourges" />
+          </div>
+          <h2 class="text-center" style="margin-bottom: 2rem">
+            COMPÉTENCES & AUTO-FORMATION
+          </h2>
+          <p class="text-center" style="margin-bottom: 2rem; color: #ccc">
+            En raison du télétravail, j'ai dû faire preuve d'une grande
+            autonomie pour me former aux technologies spécifiques (3DJS,
+            Ag-Grid).
+          </p>
+          <div
+            style="
+              display: flex;
+              flex-wrap: wrap;
+              gap: 20px;
+              justify-content: center;
+            "
+          >
+            <span class="btn-outline">A1.1.1 Analyse cahier des charges</span>
+            <span class="btn-outline">A4.1.3 Conception BDD (PhpMyAdmin)</span>
+            <span class="btn-outline"
+              >A5.2.3 Auto-formation (Symfony/3DJS)</span
+            >
+            <span class="btn-outline">A1.3.4 Déploiement service</span>
+            <span class="btn-outline">A4.1.7 Dév. composants logiciels</span>
+            <span class="btn-outline">A4.1.5 Prototypage</span>
+          </div>
+        </div>
+
+        <div class="text-center" style="margin-top: 3rem">
+          <a href="bts.html" class="btn-link">← Retour aux projets BTS</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>Email : david.chalons.com@gmail.com</p>
+      <p>© 2025 David Chalons.</p>
+    </footer>
+
+    <script>
+      function reveal() {
+        var reveals = document.querySelectorAll(".reveal");
+        for (var i = 0; i < reveals.length; i++) {
+          var windowHeight = window.innerHeight;
+          var elementTop = reveals[i].getBoundingClientRect().top;
+          var elementVisible = 100;
+          if (elementTop < windowHeight - elementVisible) {
+            reveals[i].classList.add("active");
+          }
+        }
+      }
+      window.addEventListener("scroll", reveal);
+      reveal();
+    </script>
+  </body>
+</html>

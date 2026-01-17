@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
@@ -6,7 +6,7 @@
     <title>Projets UQAC - David Chalons</title>
     <link rel="stylesheet" href="../css/style.css" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Raleway:wght@300;700;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Open+Sans:wght@300;400;600&family=Raleway:wght@300;700;900&display=swap"
       rel="stylesheet"
     />
   </head>
@@ -15,177 +15,162 @@
       <div class="nav-container">
         <div class="brand">DAVID CHALONS</div>
         <ul class="nav-links">
-          <li><a href="/html/index.html">Accueil</a></li>
-          <li><a href="index.html#projets">BTS</a></li>
-          <li><a href="/html/projet-uqac.html">UQAC</a></li>
-          <li><a href="index.html#contact">Perso</a></li>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="bts.html">BTS</a></li>
+          <li><a href="projet-uqac.html" class="active">UQAC</a></li>
+          <li><a href="perso.html">Perso</a></li>
         </ul>
       </div>
     </nav>
 
-    <header class="uqac-hero">
-      <div class="hero-wrapper">
-        <div class="hero-image-box">
+    <header>
+      <div class="hero-split">
+        <div class="hero-image">
           <img src="../image/uqac-campus.jpg" alt="Campus UQAC" />
         </div>
-        <div class="hero-text-card">
-          <h1>Mes projets UQAC</h1>
-          <p>
-            Bienvenue sur la page des projets que j'ai réalisés lors de mes
-            années à l'Université du Québec à Chicoutimi.
-          </p>
+
+        <div class="hero-content">
+          <div class="hero-text-box">
+            <h1>PROJETS<br />UQAC</h1>
+            <div class="separator-gold"></div>
+            <p>
+              Bienvenue sur la page des projets réalisés lors de mes années à
+              l'Université du Québec à Chicoutimi.
+            </p>
+          </div>
         </div>
       </div>
     </header>
 
-    <section class="section-white reveal">
-      <div class="container project-item-detail">
-        <img
-          src="../image/virus-digestive.png"
-          alt="Digestive Defense"
-          class="project-main-img"
-        />
-        <div class="project-text">
-          <h2>Projet final de conception de jeux vidéo</h2>
-          <p>
-            Pour mon cours, j’ai dû créer des documents, comme un One Pager. De
-            plus, j’ai développé un prototype de mon jeu intitulé
-            <strong>Digestive Defense</strong>. C'est un tower defense infini en
-            2D où vous défendez un intestin contre des envahisseurs pathogènes.
-          </p>
-          <p>
-            Placez stratégiquement des tours aux capacités uniques
-            (ralentissement, poison, dégâts de zone...) pour survivre le plus
-            longtemps possible. Gagnez des billets en éliminant les ennemis pour
-            améliorer vos défenses.
-          </p>
-          <div class="project-links">
-            <p><a href="../doc/onePager.pdf">Lien vers le One pager</a></p>
+    <section>
+      <div class="container">
+        <article class="project-detail-card reveal">
+          <div class="detail-img">
+            <img src="../image/virus-digestive.png" alt="Digestive Defense" />
+          </div>
+          <div class="detail-content">
+            <h2>Digestive Defense</h2>
+            <p class="tech-tag">Projet Final - Jeu Vidéo</p>
             <p>
-              <a href="../doc/documentPrincipal.pdf"
-                >Lien vers le document principal</a
-              >
+              Pour mon cours, j’ai dû créer des documents (One Pager) et
+              développer un prototype.
+              <strong>Digestive Defense</strong> est un tower defense infini en
+              2D où vous défendez un intestin contre des envahisseurs
+              pathogènes.
             </p>
-            <p>
+            <div class="detail-links">
+              <a href="../doc/onePager.pdf" class="btn-outline">One Pager</a>
+              <a href="../doc/documentPrincipal.pdf" class="btn-outline"
+                >Doc Principal</a
+              >
               <a
                 href="https://www.canva.com/design/DAGYQ2Ohdg4/nJsewlK89FglMMlOaLL3nA/view?mode=prototype"
-                >Lien vers le Prototype</a
+                target="_blank"
+                class="btn-primary"
+                >Voir le Prototype</a
               >
+            </div>
+          </div>
+        </article>
+
+        <article class="project-detail-card reveal">
+          <div class="detail-img">
+            <img src="../image/meteo-site.jpg" alt="Site Météo" />
+          </div>
+          <div class="detail-content">
+            <h2>Site Météo</h2>
+            <p class="tech-tag">Web - HTML/CSS/JS</p>
+            <p>
+              Pour mon projet final, j’ai créé un site météo qui affiche les
+              conditions actuelles. Il permet de consulter la météo mondiale,
+              d’ajouter des villes à une liste personnalisée et de les gérer.
             </p>
           </div>
-        </div>
-      </div>
-    </section>
+        </article>
 
-    <section class="section-white reveal">
-      <div class="container project-item-detail">
-        <img
-          src="../image/meteo-site.jpg"
-          alt="Site Météo"
-          class="project-main-img"
-        />
-        <div class="project-text">
-          <h2>Projet Final de conception de site WEB</h2>
-          <p>
-            Pour mon projet final, j’ai créé un site météo qui affiche la météo
-            actuelle. Il permet de consulter la météo de n’importe quelle ville
-            dans le monde, d’ajouter des villes à une liste personnalisée et de
-            supprimer celles que l’on ne souhaite plus suivre.
-          </p>
-          <p><em>Fait en Html, css et JS</em></p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section-white reveal">
-      <div class="container project-item-detail">
-        <img
-          src="../image/casse-brique.gif"
-          alt="Bubble Bobble Prototype"
-          class="project-main-img"
-        />
-        <div class="project-text">
-          <h2>
-            Premier Projet de Prototypage de jeux avec un langage de script
-          </h2>
-          <p>
-            Au cours de mon cours de Prototypage de jeux avec un langage de
-            script, j’ai dû créer un petit prototype de casse-brique.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section-white reveal">
-      <div class="container project-item-detail">
-        <img
-          src="../image/bubble-bobble.jpg"
-          alt="Bubble Bobble Prototype"
-          class="project-main-img"
-        />
-        <div class="project-text">
-          <h2>Projet Final de Prototypage de jeux avec un langage de script</h2>
-          <p>
-            Au cours de mon cours de Prototypage de jeux avec un langage de
-            script, j’ai dû créer un petit prototype de Bubble Bobble pour mon
-            projet final.
-          </p>
-          <div class="project-links">
+        <article class="project-detail-card reveal">
+          <div class="detail-img">
+            <img src="../image/casse-brique.gif" alt="Casse Brique" />
+          </div>
+          <div class="detail-content">
+            <h2>Casse-Brique</h2>
+            <p class="tech-tag">Prototypage - Scripting</p>
             <p>
-              <a href="/doc/BUBBLE-BOBBLE.pptx">Lien vers la diapositive</a>
-            </p>
-            <p>
-              <a href="https://flutzzie.itch.io/bubblebobble"
-                >Lien vers le jeu (Windows)</a
-              >
+              Premier projet réalisé pour le cours de Prototypage de jeux.
+              Création d'un casse-brique fonctionnel pour apprendre les bases de
+              Unreal.
             </p>
           </div>
-        </div>
+        </article>
+
+        <article class="project-detail-card reveal">
+          <div class="detail-img">
+            <img src="../image/bubble-bobble.jpg" alt="Bubble Bobble" />
+          </div>
+          <div class="detail-content">
+            <h2>Bubble Bobble (Clone)</h2>
+            <p class="tech-tag">Prototypage - Scripting</p>
+            <p>
+              Projet final du cours de prototypage. Reproduction des mécaniques
+              du célèbre jeu d'arcade Bubble Bobble sous Unreal.
+            </p>
+            <div class="detail-links">
+              <a href="/doc/BUBBLE-BOBBLE.pptx" class="btn-outline"
+                >Présentation (PPT)</a
+              >
+              <a
+                href="https://flutzzie.itch.io/bubblebobble"
+                target="_blank"
+                class="btn-primary"
+                >Jouer (Windows)</a
+              >
+            </div>
+          </div>
+        </article>
+
+        <article class="project-detail-card reveal">
+          <div class="detail-img">
+            <img src="../image/ChatParapluie.png" alt="Chat Parapluie" />
+          </div>
+          <div class="detail-content">
+            <h2>Chat Météo (Mobile)</h2>
+            <p class="tech-tag">Application Mobile</p>
+            <p>
+              Prototype d'application météo avec un chat interactif pour mon
+              projet final. L'application a été améliorée par la suite.
+            </p>
+            <div class="detail-links">
+              <a
+                href="https://drive.google.com/drive/u/0/folders/1GmWIU4Ge4mot37aQDMITNMsXUbDe7UxQ"
+                target="_blank"
+                class="btn-primary"
+                >Télécharger l'APK (Beta)</a
+              >
+            </div>
+          </div>
+        </article>
       </div>
     </section>
 
-    <section class="section-white reveal">
-      <div class="container project-item-detail">
-        <img
-          src="../image/ChatParapluie.png"
-          alt="Chat Parapluie Prototype"
-          class="project-main-img"
-        />
-        <div class="project-text">
-          <h2>Projet Final d'application mobile</h2>
-          <p>
-            Au cours de mon cours d'application mobile, j’ai dû créer un petit
-            prototype de meteo avec un chat pour mon projet final. Que j'ai en
-            suite amelioré pour la sortir sur le Play Store.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <footer class="footer-dark">
+    <footer>
       <p>Email : david.chalons.com@gmail.com</p>
-      <p>© 2025 par David Chalons. Créé avec passion.</p>
+      <p>© 2025 David Chalons.</p>
     </footer>
-  </body>
 
-  <script>
-    function reveal() {
-      var reveals = document.querySelectorAll(".reveal");
-      for (var i = 0; i < reveals.length; i++) {
-        var windowHeight = window.innerHeight;
-        var elementTop = reveals[i].getBoundingClientRect().top;
-        var elementVisible = 150; // Déclenche l'effet 150px avant l'apparition
-
-        if (elementTop < windowHeight - elementVisible) {
-          reveals[i].classList.add("active");
+    <script>
+      function reveal() {
+        var reveals = document.querySelectorAll(".reveal");
+        for (var i = 0; i < reveals.length; i++) {
+          var windowHeight = window.innerHeight;
+          var elementTop = reveals[i].getBoundingClientRect().top;
+          var elementVisible = 100;
+          if (elementTop < windowHeight - elementVisible) {
+            reveals[i].classList.add("active");
+          }
         }
       }
-    }
-
-    // Écoute le défilement de la souris
-    window.addEventListener("scroll", reveal);
-
-    // Lance une fois au chargement pour les éléments déjà visibles
-    reveal();
-  </script>
+      window.addEventListener("scroll", reveal);
+      reveal();
+    </script>
+  </body>
 </html>

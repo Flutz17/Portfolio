@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Détails PPE 3 - David Chalons</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Open+Sans:wght@300;400;600&family=Raleway:wght@300;700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="dark-theme">
+    <nav class="main-navbar">
+      <div class="nav-container">
+        <div class="brand">DAVID CHALONS</div>
+        <ul class="nav-links">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="bts.html" class="active">BTS</a></li>
+          <li><a href="projet-uqac.html">UQAC</a></li>
+          <li><a href="perso.html">Perso</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <header>
+      <div class="hero-split">
+        <div class="hero-image">
+          <img src="../image/ppe3.avif" alt="Site M2L 3.0" />
+        </div>
+
+        <div class="hero-content">
+          <div class="hero-text-box">
+            <h1>PPE 3<br />SITE DE LA M2L 3.0</h1>
+            <div class="separator-gold"></div>
+            <p>
+              Développement de nouvelles fonctionnalités avancées pour les
+              utilisateurs et l'administration (Secrétariat).
+            </p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section>
+      <div class="container">
+        <article class="project-detail-card vertical reveal">
+          <div class="detail-content">
+            <h2>MISSION 1 : FONCTIONNALITÉS UTILISATEUR</h2>
+            <p class="tech-tag">CONSULTATION / RECHERCHE / FRONT-OFFICE</p>
+            <p>
+              En tant qu'utilisateur, l'objectif était de faciliter l'accès à
+              l'information publique de la M2L.
+            </p>
+            <ul
+              style="
+                text-align: left;
+                max-width: 800px;
+                margin: 0 auto;
+                color: #ccc;
+                list-style-type: disc;
+                padding-left: 20px;
+              "
+            >
+              <li>
+                Visualiser les informations pratiques et la liste des services
+                proposés par la M2L.
+              </li>
+              <li>Accéder aux plans des locaux.</li>
+              <li>
+                Visualiser la liste des comités départementaux (globale ou
+                rattachés à une ligue).
+              </li>
+              <li>
+                <strong>Recherche avancée :</strong> Trouver une ligue et ses
+                comités par discipline sportive.
+              </li>
+              <li>
+                <strong>Fiches détaillées :</strong> Voir les coordonnées
+                complètes d'une ligue ou d'un comité.
+              </li>
+              <li>
+                Visualiser les noms des membres composant le bureau d'une ligue
+                ou d'un comité.
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="project-detail-card vertical reveal">
+          <div class="detail-img">
+            <img src="../image/ppe3-1.avif" alt="Interface Secrétaire M2L" />
+          </div>
+          <div class="detail-content">
+            <h2>MISSION 2 : FONCTIONNALITÉS SECRÉTAIRE</h2>
+            <p class="tech-tag">BACK-OFFICE / GESTION / MISE À JOUR</p>
+            <p>
+              En tant que secrétaire M2L, il fallait pouvoir administrer les
+              données sensibles.
+            </p>
+            <ul
+              style="
+                text-align: left;
+                max-width: 800px;
+                margin: 0 auto;
+                color: #ccc;
+                list-style-type: disc;
+                padding-left: 20px;
+              "
+            >
+              <li>
+                <strong>Mise à jour :</strong> Modifier les informations sur une
+                ligue ou un comité.
+              </li>
+              <li>
+                Visualiser les <strong>coordonnées complètes</strong> (privées)
+                des membres des bureaux.
+              </li>
+              <li>
+                Accéder à la liste des responsables des comités d'un même
+                département géographique.
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <div class="content-box reveal" style="margin-top: 4rem">
+          <h2 class="text-center" style="margin-bottom: 2rem">
+            COMPÉTENCES VALIDÉES
+          </h2>
+          <div
+            style="
+              display: flex;
+              flex-wrap: wrap;
+              gap: 20px;
+              justify-content: center;
+            "
+          >
+            <span class="btn-outline">A4.1.3 Conception BDD</span>
+            <span class="btn-outline">A4.1.7 Dév. de composants logiciels</span>
+            <span class="btn-outline">A1.4.2 Indicateurs de suivi</span>
+            <span class="btn-outline">A1.4.3 Gestion des ressources</span>
+            <span class="btn-outline">A2.3.1 Identification de problème</span>
+          </div>
+        </div>
+
+        <div class="text-center" style="margin-top: 3rem">
+          <a href="bts.html" class="btn-link">← Retour aux projets BTS</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>Email : david.chalons.com@gmail.com</p>
+      <p>© 2025 David Chalons.</p>
+    </footer>
+
+    <script>
+      function reveal() {
+        var reveals = document.querySelectorAll(".reveal");
+        for (var i = 0; i < reveals.length; i++) {
+          var windowHeight = window.innerHeight;
+          var elementTop = reveals[i].getBoundingClientRect().top;
+          var elementVisible = 100;
+          if (elementTop < windowHeight - elementVisible) {
+            reveals[i].classList.add("active");
+          }
+        }
+      }
+      window.addEventListener("scroll", reveal);
+      reveal();
+    </script>
+  </body>
+</html>

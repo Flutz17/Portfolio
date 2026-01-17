@@ -1,4 +1,6 @@
-/* --- RESET GLOBAL --- */
+/* =========================================
+   1. RESET & GLOBAL (THEME SOMBRE)
+   ========================================= */
 * {
   margin: 0;
   padding: 0;
@@ -7,18 +9,23 @@
 
 body {
   font-family: "Open Sans", sans-serif;
-  color: #1f1e1e;
+  /* Fond sombre dégradé (Mature & Magique) */
+  background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+  background-attachment: fixed;
+  color: #e0e0e0; /* Texte blanc cassé */
   line-height: 1.6;
-  background-color: #f4f4f4; /* Gris clair pour le fond */
   padding-top: 70px; /* Espace pour la navbar fixe */
 }
 
+/* Typographie Dorée */
 h1,
 h2,
 h3 {
-  font-family: "Raleway", sans-serif;
+  font-family: "Cinzel Decorative", cursive;
   text-transform: uppercase;
   letter-spacing: 2px;
+  color: #ffd700; /* OR */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 a {
@@ -27,9 +34,9 @@ a {
   transition: 0.3s;
 }
 
-/* --- UTILITAIRES --- */
+/* Utilitaires */
 .container {
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -37,292 +44,43 @@ a {
 .text-center {
   text-align: center;
 }
-.text-white {
-  color: #fff;
-}
-.text-grey {
-  color: #aaa;
-}
 
 .subtitle {
   font-style: italic;
   font-weight: 300;
   margin-bottom: 3rem;
-  font-size: 0.9rem;
-  color: #666;
+  font-size: 1rem;
+  color: #b0b0b0;
 }
 
-/* --- BACKGROUNDS DES SECTIONS --- */
-.section-pale-blue {
-  background-color: #e3f2fd;
+/* Sections Globales */
+section {
   padding: 4rem 0;
-}
-.section-white {
-  background-color: transparent; /* Pour voir le gris du body derrière */
-  padding: 20px 0; /* Petit espace entre les blocs */
-}
-.section-grey {
-  background-color: #dddddd;
-  padding: 4rem 0;
-}
-.section-black {
-  background-color: #000000;
-  padding: 4rem 0;
-  color: white;
-}
-.section-light-grey {
-  background-color: #e0e0e0;
-  padding: 3rem 0;
+  border-bottom: 1px solid rgba(255, 215, 0, 0.1);
 }
 
-/* --- HEADER / HERO (ACCUEIL) --- */
-header {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  min-height: 600px;
-  background-color: #000;
+/* Animation d'apparition (Reveal) */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-nav {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  padding: 20px 40px;
-  display: flex;
-  justify-content: flex-end;
-  z-index: 10;
-}
-
-.nav-links a {
-  color: #fff;
-  margin-left: 20px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  text-transform: uppercase;
-}
-
-.hero-split {
-  display: flex;
-  height: 100%;
-}
-.hero-image {
-  width: 50%;
-  height: 100%;
-  overflow: hidden;
-}
-.hero-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.hero-content {
-  width: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #111;
-  background-image: repeating-linear-gradient(
-    45deg,
-    #1a1a1a 0,
-    #1a1a1a 1px,
-    transparent 0,
-    transparent 50%
-  );
-  background-size: 20px 20px;
-  color: white;
-}
-
-.hero-text-box {
-  text-align: center;
-  border: 4px solid rgba(255, 255, 255, 0.1);
-  padding: 3rem;
-}
-
-.hero-text-card h1 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  font-weight: 700;
-  color: #000 !important; /* Force la couleur noire pour le voir sur le bleu clair */
-  position: relative;
-  z-index: 5;
-}
-.separator {
-  width: 50px;
-  height: 2px;
-  background-color: white;
-  margin: 10px auto;
-}
-
-/* --- JOBS & PROJETS (ACCUEIL) --- */
-.job-item {
-  margin-bottom: 2rem;
-  padding-left: 1rem;
-  border-left: 2px solid #ccc;
-}
-.date {
-  font-size: 0.85rem;
-  color: #777;
-  margin-bottom: 10px;
-  display: block;
-}
-
-.projects-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-.project-card {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-}
-.project-img {
-  width: 250px;
-  height: 150px;
-  background-color: #eee;
-  overflow: hidden;
-  flex-shrink: 0;
-}
-.project-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.btn-outline {
-  border: 1px solid #333;
-  padding: 5px 15px;
-  font-size: 0.8rem;
-}
-.btn-outline:hover {
-  background: #333;
-  color: white;
-}
-
-/* --- STYLES SPÉCIFIQUES PAGE UQAC --- */
-.nav-dark {
-  background-color: #000;
-  color: #fff;
-  padding: 20px;
-}
-.nav-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-.brand {
-  font-weight: 700;
-  letter-spacing: 2px;
-}
-
-/* Ajoute cette marge au tout début de tes styles de page */
-.uqac-hero {
-  padding-top: 100px; /* Ajuste cette valeur selon la hauteur de ta barre noire */
-  background-color: #fff;
-}
-.hero-wrapper {
-  max-width: 1000px;
-  margin: 0 auto;
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-.hero-image-box {
-  width: 60%;
-  z-index: 1;
-}
-.hero-image-box img {
-  width: 100%;
-  display: block;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-
-.hero-text-card {
-  width: 50%;
-  background-color: #e3f2fd;
-  padding: 60px 40px;
-  margin-left: -10%;
-  z-index: 2;
-}
-
-.uqac-project {
-  padding: 80px 20px;
-  border-bottom: 1px solid #eee;
-}
-.container-small {
-  max-width: 700px;
-  margin: 0 auto;
-  text-align: center;
-}
-.project-visual img {
-  width: 100%;
-  max-width: 400px;
-  border-radius: 4px;
-  margin-bottom: 30px;
-}
-
-.links-stack a {
-  display: block;
-  color: #000;
-  text-decoration: underline;
-  margin-bottom: 5px;
-}
-
-.footer-uqac {
-  background-color: #000;
-  color: #fff;
-  text-align: center;
-  padding: 40px 20px;
-}
-
-/* --- RESPONSIVE MOBILE (TOUT EN BAS) --- */
-@media (max-width: 768px) {
-  .hero-split {
-    flex-direction: column;
-  }
-  .hero-image,
-  .hero-content {
-    width: 100%;
-    height: 50vh;
-  }
-  .nav-links {
-    display: none;
-  }
-
-  /* Pour la page UQAC sur Mobile */
-  .hero-wrapper {
-    flex-direction: column;
-  }
-  .hero-image-box,
-  .hero-text-card {
-    width: 100%;
-    margin-left: 0;
-  }
-  .hero-text-card {
-    text-align: center;
-    padding: 30px 20px;
-  }
-  .project-card {
-    flex-direction: column;
-    text-align: center;
-  }
-  .project-img {
-    width: 100%;
-    height: 200px;
-  }
-}
-/* --- NAVIGATION PRINCIPALE FIXE --- */
+/* =========================================
+   2. NAVBAR & FOOTER
+   ========================================= */
 .main-navbar {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: #000;
-  z-index: 1000; /* Force la barre à rester TOUJOURS au-dessus du reste */
-  height: 70px; /* Assure-toi que cette hauteur est fixe */
+  background-color: rgba(0, 0, 0, 0.95);
+  z-index: 1000;
+  height: 70px;
+  border-bottom: 1px solid #333;
 }
 
 .nav-container {
@@ -336,10 +94,11 @@ nav {
 }
 
 .brand {
-  color: #fff;
+  color: #ffd700;
   font-weight: 700;
   letter-spacing: 2px;
-  font-family: "Raleway", sans-serif;
+  font-family: "Cinzel Decorative", cursive;
+  font-size: 1.2rem;
 }
 
 .nav-links {
@@ -353,89 +112,723 @@ nav {
   font-size: 0.85rem;
   font-weight: 600;
   text-transform: uppercase;
-  transition: color 0.3s;
 }
 
-.nav-links a:hover {
-  color: #e3f2fd; /* Un bleu très clair au survol */
+.nav-links a:hover,
+.nav-links a.active {
+  color: #ffd700;
 }
 
-/* --- AJUSTEMENT IMPORTANT --- */
-/* Comme la barre est "fixed", elle ne prend plus de place dans le flux. 
-   Il faut ajouter une marge en haut de tes pages pour que le contenu ne soit pas caché SOUS la barre. */
-
-body {
-  padding-top: 70px; /* Doit être égal à la hauteur de la navbar */
+footer {
+  text-align: center;
+  padding: 40px 20px;
+  background: #000;
+  border-top: 1px solid #333;
+  font-size: 0.9rem;
+  color: #777;
 }
 
-/* On enlève les anciens styles de nav qui pourraient créer des conflits */
-.nav-dark,
-.nav-interne {
-  display: none;
+/* =========================================
+   3. HERO (ACCUEIL & UQAC)
+   ========================================= */
+header {
+  min-height: 100vh;
+  padding-top: 0;
 }
-.project-main-img {
+
+.hero-split {
+  display: flex;
+  height: 100vh;
+  margin-top: -70px; /* Compense la navbar */
+  padding-top: 70px;
+}
+
+.hero-image {
+  width: 50%;
+  height: 100%;
+  position: relative;
+}
+
+.hero-image img {
   width: 100%;
-  max-width: 400px;
-  height: 250px;
-  object-fit: cover; /* On utilise cover pour remplir le rectangle proprement */
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.7);
 }
 
-.project-main-img:hover {
-  transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-}
-
-/* --- EFFET D'APPARITION (FADE-IN) --- */
-/* On prépare l'état caché */
-.reveal {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s ease-out;
-}
-
-/* L'état visible (activé par JS plus bas) */
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* --- RAFFINEMENT DES SECTIONS --- */
-.project-item-detail {
+.hero-content {
+  width: 50%;
   display: flex;
   align-items: center;
-  gap: 60px;
-  padding: 40px; /* Espace à l'intérieur du bloc */
-  margin-bottom: 40px; /* Espace entre les blocs */
-  background-color: #fff; /* Fond blanc du bloc */
-  border-radius: 15px; /* Bords arrondis */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Ombre très légère */
-  border-bottom: none; /* On enlève l'ancienne bordure de ligne */
+  justify-content: center;
+  background: #050505;
+  position: relative;
 }
 
-.project-text h2 {
-  font-size: 1.8rem;
+.hero-text-box {
+  text-align: center;
+  border: 2px solid rgba(255, 215, 0, 0.3);
+  padding: 4rem;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.hero-text-box h1 {
+  font-size: 3rem;
+  color: #fff;
   margin-bottom: 20px;
-  color: #000; /* On remet en noir simple pour la clarté */
-  text-align: left;
 }
 
-.project-links a {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 8px 16px;
-  background: #f8f9fa;
-  border-radius: 6px;
-  border: 1px solid #ddd;
+.separator-gold {
+  width: 60px;
+  height: 3px;
+  background-color: #ffd700;
+  margin: 20px auto;
+}
+
+/* =========================================
+   4. CONTENU (TIMELINE & TEXTE)
+   ========================================= */
+.content-box {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 30px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.job-item {
+  margin-bottom: 2.5rem;
+  padding-left: 1.5rem;
+  border-left: 3px solid #ffd700;
+  position: relative;
+}
+
+.job-item h3 {
+  color: #fff;
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.date,
+.edu-date {
   font-size: 0.9rem;
+  color: #ffd700;
   font-weight: 600;
-  color: #333;
+  margin-bottom: 10px;
+  display: block;
+  text-transform: uppercase;
+}
+
+.institution {
+  font-style: italic;
+  color: #aaa;
+  margin-bottom: 5px;
+}
+
+/* =========================================
+   5. BOUTONS
+   ========================================= */
+/* LinkedIn */
+.btn-link {
+  display: inline-block;
+  padding: 10px 30px;
+  background: transparent;
+  border: 2px solid #0077b5;
+  color: #0077b5;
+  border-radius: 50px;
+  font-weight: 700;
+  margin-top: 20px;
+}
+.btn-link:hover {
+  background: #0077b5;
+  color: #fff;
+}
+
+/* Outline (Projets) */
+.btn-outline {
+  display: inline-block;
+  padding: 8px 20px;
+  border: 1px solid #ffd700;
+  color: #ffd700;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+.btn-outline:hover {
+  background: #ffd700;
+  color: #000;
+}
+
+/* Itch.io */
+.btn-primary {
+  display: inline-block;
+  padding: 12px 35px;
+  background: linear-gradient(135deg, #fa5c5c 0%, #ff7e5f 100%);
+  color: #fff;
+  border-radius: 50px;
+  font-weight: 700;
+  box-shadow: 0 4px 15px rgba(250, 92, 92, 0.4);
+}
+.btn-primary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(250, 92, 92, 0.6);
+}
+
+/* =========================================
+   6. PAGE ACCUEIL: PROJETS GRID
+   ========================================= */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.project-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  overflow: hidden;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  border-color: #ffd700;
+}
+
+.project-img {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.project-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   transition: 0.3s;
 }
 
-.project-links a:hover {
-  background: #000;
+.project-card:hover .project-img img {
+  transform: scale(1.1);
+}
+
+.project-info {
+  padding: 20px;
+  text-align: center;
+}
+
+.project-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
   color: #fff;
-  border-color: #000;
+}
+
+/* =========================================
+   7. PAGE BTS: STYLE BULLES
+   ========================================= */
+.bts-section {
+  background-color: transparent !important;
+}
+.bts-title {
+  color: #ffd700;
+}
+
+.bubbles-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+}
+
+.bubble-card {
+  width: 220px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bubble-img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 20px;
+  border: 4px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s;
+}
+
+.bubble-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bubble-card:hover .bubble-img {
+  transform: scale(1.05);
+  border-color: #ffd700;
+}
+
+.bubble-card h3 {
+  color: #fff;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+.bubble-card p {
+  color: #ccc;
+  font-size: 0.9rem;
+  min-height: 60px;
+}
+
+/* =========================================
+   8. PAGE UQAC: DETAIL CARDS
+   ========================================= */
+.project-detail-card {
+  display: flex;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 215, 0, 0.1);
+  border-radius: 15px;
+  margin-bottom: 4rem;
+  overflow: hidden;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.project-detail-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border-color: rgba(255, 215, 0, 0.3);
+}
+
+.detail-img {
+  flex: 1;
+  min-height: 300px;
+  overflow: hidden;
+}
+
+.detail-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.project-detail-card:hover .detail-img img {
+  transform: scale(1.05);
+}
+
+.detail-content {
+  flex: 1.5;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.detail-content h2 {
+  color: #ffd700;
+  margin-bottom: 10px;
+  font-size: 1.8rem;
+}
+
+.tech-tag {
+  color: #0077b5;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+.detail-content p {
+  margin-bottom: 20px;
+  color: #ccc;
+  font-size: 1rem;
+}
+
+.detail-links {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+/* Responsive Mobile UQAC */
+@media (max-width: 768px) {
+  .hero-split {
+    flex-direction: column;
+  }
+  .hero-image,
+  .hero-content {
+    width: 100%;
+    height: 50vh;
+  }
+  .nav-links {
+    display: none;
+  }
+  .hero-text-box {
+    padding: 2rem;
+    width: 90%;
+  }
+
+  .project-detail-card {
+    flex-direction: column;
+  }
+  .detail-img {
+    height: 200px;
+  }
+  .detail-content {
+    padding: 25px;
+    text-align: center;
+  }
+  .detail-links {
+    justify-content: center;
+  }
+}
+
+/* =========================================
+   9. PAGE PERSO (STYLE MAGIQUE)
+   ========================================= */
+.active-magic {
+  color: #ffd700 !important;
+  text-shadow: 0 0 5px #ffd700;
+}
+
+.magic-hero {
+  padding-top: 120px;
+  padding-bottom: 80px;
+  text-align: center;
+}
+
+.magic-title {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+}
+
+.magic-subtitle {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  color: #b39ddb;
+}
+
+.magic-section {
+  padding: 80px 0;
+}
+
+.magic-container {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+.reverse .magic-container {
+  flex-direction: row-reverse;
+}
+
+.magic-text-box {
+  flex: 1;
+}
+.magic-text-box h2 {
+  font-size: 2.2rem;
+  margin-bottom: 25px;
+}
+.magic-text-box p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 30px;
+  text-align: justify;
+}
+
+.magic-gif-box {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.magic-gif {
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.2);
+  border: 3px solid rgba(255, 215, 0, 0.3);
+  transition: transform 0.3s;
+}
+.magic-gif:hover {
+  transform: scale(1.03);
+}
+
+/* Boutons Magiques */
+.btn-magic {
+  display: inline-block;
+  padding: 15px 35px;
+  border-radius: 50px;
+  font-family: "Cinzel Decorative", cursive;
+  font-weight: 700;
+  transition: all 0.3s;
+  border: 2px solid transparent;
+}
+.btn-magic:hover {
+  transform: translateY(-5px);
+  filter: brightness(1.2);
+}
+
+.btn-purple {
+  background: linear-gradient(45deg, #6a1b9a, #8e24aa);
+  color: #fff;
+}
+.btn-pink {
+  background: linear-gradient(45deg, #ad1457, #d81b60);
+  color: #fff;
+}
+.btn-orange {
+  background: linear-gradient(45deg, #e65100, #f57c00);
+  color: #fff;
+}
+
+.btn-win95 {
+  background: linear-gradient(45deg, #008080, #4b6cb7);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.btn-win95:hover {
+  background: linear-gradient(45deg, #0000ff, #1e90ff);
+}
+
+@media (max-width: 768px) {
+  .magic-container,
+  .reverse .magic-container {
+    flex-direction: column;
+  }
+  .magic-text-box p {
+    text-align: center;
+  }
+}
+/* =========================================
+   OVERRIDE : RESTAURATION DE LA MAGIE
+   (Uniquement pour la page Perso)
+   ========================================= */
+
+/* 1. Force le fond violet mystique au lieu du bleu sombre global */
+body.magic-body {
+  background: linear-gradient(
+    to bottom,
+    #0f0c29,
+    #302b63,
+    #24243e
+  ); /* Base sombre */
+  background-color: #000; /* Fallback */
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* 2. Animation des Étoiles (Le Background Magique) */
+.stars,
+.twinkling {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.stars {
+  background: #000
+    url("http://www.script-tutorials.com/demos/360/images/stars.png") repeat top
+    center;
+  z-index: -2;
+}
+
+.twinkling {
+  background: transparent
+    url("http://www.script-tutorials.com/demos/360/images/twinkling.png") repeat
+    top center;
+  z-index: -1;
+  animation: move-twink-back 200s linear infinite;
+  opacity: 0.6;
+}
+
+@keyframes move-twink-back {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -10000px 5000px;
+  }
+}
+
+/* 3. Les Textes : Plus "Grimoire" */
+.magic-body .magic-title,
+.magic-body h2 {
+  color: #ffd700; /* Or éclatant */
+  text-shadow:
+    0 0 10px rgba(255, 215, 0, 0.7),
+    0 0 20px rgba(255, 100, 200, 0.5); /* Lueur rose/or */
+  letter-spacing: 4px;
+}
+
+.magic-body p {
+  color: #e0d0ff; /* Lavande clair */
+  font-size: 1.1rem;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.8);
+}
+
+/* 4. Les Boîtes de contenu : Effet Verre & Or */
+.magic-text-box {
+  background: rgba(20, 10, 40, 0.6); /* Violet très sombre transparent */
+  padding: 2rem;
+  border: 1px solid rgba(255, 215, 0, 0.3); /* Bordure or fine */
+  box-shadow:
+    0 0 15px rgba(138, 43, 226, 0.2),
+    inset 0 0 20px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  backdrop-filter: blur(5px); /* Effet de flou derrière */
+  position: relative;
+}
+
+/* Petit détail : coins dorés */
+.magic-text-box::after {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 15px;
+  background: linear-gradient(45deg, #ffd700, transparent, #ffd700);
+  z-index: -1;
+  opacity: 0.3;
+}
+
+/* 5. Animation de Lévitation pour les GIFs */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.magic-gif {
+  animation: float 6s ease-in-out infinite;
+  border: 2px solid #ffd700;
+  box-shadow: 0 0 30px rgba(138, 43, 226, 0.4);
+
+  /* --- AJOUT ICI : Fond clair pour détacher l'image --- */
+  background-color: rgba(255, 255, 255, 0.15); /* Blanc à 15% d'opacité */
+  padding: 10px; /* Un petit espace entre le cadre et l'image */
+  border-radius: 20px; /* On garde les bords ronds */
+  backdrop-filter: blur(5px); /* Optionnel : floute le fond derrière l'image */
+}
+
+/* 6. Les Boutons Magiques (Boostés) */
+.btn-magic {
+  border: 1px solid #fff;
+  font-size: 1.1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Effet de brillance qui traverse le bouton */
+.btn-magic::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transition: 0.5s;
+}
+.btn-magic:hover::before {
+  left: 100%;
+}
+
+/* --- 2. Animation des Étoiles (Version 100% CSS) --- */
+.stars,
+.twinkling {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  pointer-events: none; /* Important pour pouvoir cliquer en dessous */
+}
+
+/* On dessine les étoiles avec du code */
+.stars {
+  z-index: -2;
+  background: #0f0c29; /* Fond de base */
+  background-image:
+    radial-gradient(2px 2px at 20px 30px, #eee, rgba(0, 0, 0, 0)),
+    radial-gradient(2px 2px at 40px 70px, #fff, rgba(0, 0, 0, 0)),
+    radial-gradient(2px 2px at 50px 160px, #ddd, rgba(0, 0, 0, 0)),
+    radial-gradient(2px 2px at 90px 40px, #fff, rgba(0, 0, 0, 0)),
+    radial-gradient(2px 2px at 130px 80px, #fff, rgba(0, 0, 0, 0)),
+    radial-gradient(2px 2px at 160px 120px, #ddd, rgba(0, 0, 0, 0));
+  background-repeat: repeat;
+  background-size: 200px 200px; /* Taille du motif répété */
+}
+
+/* On ajoute un voile qui bouge pour l'effet scintillant */
+.twinkling {
+  z-index: -1;
+  background: transparent
+    url("https://raw.githubusercontent.com/JulianLaval/canvas-particle-network/master/img/demo-bg.png")
+    repeat top center;
+  animation: move-twink-back 60s linear infinite;
+  opacity: 0.3; /* Légère transparence */
+}
+
+@keyframes move-twink-back {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -10000px 5000px;
+  }
+}
+.project-detail-card.vertical {
+  flex-direction: column; /* Empile l'image et le texte */
+}
+
+.project-detail-card.vertical .detail-img {
+  width: 100%;
+  height: auto; /* La hauteur s'adapte à l'image */
+  min-height: 400px; /* On force une bonne taille minimale */
+  max-height: 600px; /* On évite que ça prenne tout l'écran si l'image est géante */
+  border-bottom: 1px solid rgba(255, 215, 0, 0.1); /* Petite ligne de séparation */
+}
+
+/* On centre le texte en dessous */
+.project-detail-card.vertical .detail-content {
+  width: 100%;
+  text-align: center;
+  padding: 3rem;
+}
+
+/* On centre aussi les boutons */
+.project-detail-card.vertical .detail-links {
+  justify-content: center;
 }
