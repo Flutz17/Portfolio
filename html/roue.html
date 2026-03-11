@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Générateur - Rosanova Studio</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #121212;
+        color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px;
+      }
+
+      .container {
+        background-color: #1e1e1e;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+        max-width: 800px;
+        width: 100%;
+        border: 2px solid #ff0055;
+      }
+
+      h1 {
+        color: #ff0055;
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      /* Style de chaque machine à sous */
+      .machine {
+        background-color: #252525;
+        border: 1px solid #444;
+        border-radius: 10px;
+        padding: 20px;
+        margin-bottom: 20px;
+        box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.8);
+      }
+
+      .machine-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+      }
+
+      .machine-header h2 {
+        color: #00e676;
+        font-size: 1.3em;
+        margin: 0;
+      }
+
+      .btn-spin {
+        background-color: #ff0055;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 1em;
+        font-weight: bold;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.2s;
+        text-transform: uppercase;
+      }
+
+      .btn-spin:hover {
+        background-color: #cc0044;
+      }
+      .btn-spin:active {
+        transform: scale(0.95);
+      }
+
+      /* Conteneur global des 3 rouleaux */
+      .slots-container {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+      }
+
+      /* La "boîte" qui contient le titre + le rouleau */
+      .slot-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 200px; /* On fixe la largeur ici maintenant */
+      }
+
+      /* Le petit titre au-dessus du rouleau */
+      .slot-label {
+        font-size: 0.8em;
+        color: #888; /* Gris discret */
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 6px;
+        font-weight: bold;
+      }
+
+      /* L'écran d'affichage du mot */
+      .slot {
+        width: 100%;
+        box-sizing: border-box;
+        background-color: #0a0a0a;
+        color: #00e676;
+        border: 2px solid #333;
+        border-radius: 5px;
+        padding: 15px 5px;
+        text-align: center;
+        font-family: "Courier New", Courier, monospace;
+        font-size: 1.1em;
+        font-weight: bold;
+        text-transform: uppercase;
+        box-shadow: inset 0 0 10px #000;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+
+      /* L'effet visuel pendant que ça tourne */
+      .spinning {
+        color: #ffffff;
+        text-shadow: 0 0 5px #00e676;
+        animation: trembler 0.1s infinite;
+      }
+
+      @keyframes trembler {
+        0% {
+          transform: translateY(-2px);
+        }
+        50% {
+          transform: translateY(2px);
+        }
+        100% {
+          transform: translateY(-2px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>🎰 Machines à Idées - Rosanova</h1>
+
+      <h2 style="text-align: center; color: #fff; margin-top: 40px">
+        📖 Univers & Histoire
+      </h2>
+
+      <div class="machine">
+        <div class="machine-header">
+          <h2>🌍 Monde</h2>
+          <button class="btn-spin" onclick="lancerMachine('monde')">
+            Tourner
+          </button>
+        </div>
+        <div class="slots-container">
+          <div class="slot-wrapper">
+            <span class="slot-label">Structure</span>
+            <div class="slot" id="monde-1">---</div>
+          </div>
+          <div class="slot-wrapper">
+            <span class="slot-label">Élément</span>
+            <div class="slot" id="monde-2">---</div>
+          </div>
+          <div class="slot-wrapper">
+            <span class="slot-label">Ambiance</span>
+            <div class="slot" id="monde-3">---</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="machine">
+        <div class="machine-header">
+          <h2>⏳ Époque</h2>
+          <button class="btn-spin" onclick="lancerMachine('epoque')">
+            Tourner
+          </button>
+        </div>
+        <div class="slots-container">
+          <div class="slot-wrapper">
+            <span class="slot-label">Période</span>
+            <div class="slot" id="epoque-1">---</div>
+          </div>
+          <div class="slot-wrapper">
+            <span class="slot-label">Événement</span>
+            <div class="slot" id="epoque-2">---</div>
+          </div>
+          <div class="slot-wrapper">
+            <span class="slot-label">Ton</span>
+            <div class="slot" id="epoque-3">---</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="machine">
+        <div class="machine-header">
+          <h2>🦸‍♂️ Protagoniste</h2>
+          <button class="btn-spin" onclick="lancerMachine('perso')">
+            Tourner
+          </button>
+        </div>
+        <div class="slots-container">
+          <div class="slot-wrapper">
+            <span class="slot-label">Rôle</span>
+            <div class="slot" id="perso-1">---</div>
+          </div>
+          <div class="slot-wrapper">
+            <span class="slot-label">Pouvoir</span>
+            <div class="slot" id="perso-2">---</div>
+          </div>
+          <div class="slot-wrapper">
+            <span class="slot-label">Trait</span>
+            <div class="slot" id="perso-3">---</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="machine">
+        <div class="machine-header">
+          <h2>🎯 Enjeu</h2>
+          <button class="btn-spin" onclick="lancerMachine('enjeu')">
+            Tourner
+          </button>
+        </div>
+        <div class="slots-container">
+          <div class="slot-wrapper">
+            <span class="slot-label">Action</span>
+            <div class="slot" id="enjeu-1">---</div>
+          </div>
+          <div class="slot-wrapper">
+            <span class="slot-label">Cible</span>
+            <div class="slot" id="enjeu-2">---</div>
+          </div>
+          <div class="slot-wrapper">
+            <span class="slot-label">Twist</span>
+            <div class="slot" id="enjeu-3">---</div>
+          </div>
+        </div>
+      </div>
+
+      <h2 style="text-align: center; color: #00d4ff; margin-top: 50px">
+        🕹️ Game Design
+      </h2>
+
+      <div class="machine" style="border-color: #00d4ff">
+        <div class="machine-header">
+          <h2 style="color: #00d4ff">⚙️ Mécanique</h2>
+          <button
+            class="btn-spin"
+            style="background-color: #00d4ff; color: #000"
+            onclick="lancerMachine('meca')"
+          >
+            Tourner
+          </button>
+        </div>
+        <div class="slots-container">
+          <div class="slot-wrapper">
+            <span class="slot-label">Action</span>
+            <div class="slot" id="meca-1" style="color: #00d4ff">---</div>
+          </div>
+          <div class="slot-wrapper">
+            <span class="slot-label">Contrainte</span>
+            <div class="slot" id="meca-2" style="color: #00d4ff">---</div>
+          </div>
+          <div class="slot-wrapper">
+            <span class="slot-label">Twist</span>
+            <div class="slot" id="meca-3" style="color: #00d4ff">---</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="machine" style="border-color: #00d4ff">
+        <div class="machine-header">
+          <h2 style="color: #00d4ff">🎵 Audio</h2>
+          <button
+            class="btn-spin"
+            style="background-color: #00d4ff; color: #000"
+            onclick="lancerMachine('son')"
+          >
+            Tourner
+          </button>
+        </div>
+        <div class="slots-container">
+          <div class="slot-wrapper">
+            <span class="slot-label">Style</span>
+            <div class="slot" id="son-1" style="color: #00d4ff">---</div>
+          </div>
+          <div class="slot-wrapper">
+            <span class="slot-label">Instrument</span>
+            <div class="slot" id="son-2" style="color: #00d4ff">---</div>
+          </div>
+          <div class="slot-wrapper">
+            <span class="slot-label">Ambiance</span>
+            <div class="slot" id="son-3" style="color: #00d4ff">---</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="machine" style="border-color: #00d4ff">
+        <div class="machine-header">
+          <h2 style="color: #00d4ff">🎮 Genre</h2>
+          <button
+            class="btn-spin"
+            style="background-color: #00d4ff; color: #000"
+            onclick="lancerMachine('type')"
+          >
+            Tourner
+          </button>
+        </div>
+        <div class="slots-container">
+          <div class="slot-wrapper">
+            <span class="slot-label">Type</span>
+            <div class="slot" id="type-1" style="color: #00d4ff">---</div>
+          </div>
+          <div class="slot-wrapper">
+            <span class="slot-label">Caméra</span>
+            <div class="slot" id="type-2" style="color: #00d4ff">---</div>
+          </div>
+          <div class="slot-wrapper">
+            <span class="slot-label">Rythme</span>
+            <div class="slot" id="type-3" style="color: #00d4ff">---</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../java/generateur.js"></script>
+  </body>
+</html>
