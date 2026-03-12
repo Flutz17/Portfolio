@@ -1,7 +1,3 @@
-// ==========================================
-// 1. BASE DE DONNÉES : MONDES (35 937 combinaisons)
-// ==========================================
-
 const mondes_structure = [
   "Métropole",
   "Forêt",
@@ -109,10 +105,6 @@ const mondes_ambiance = [
   "Lunaire",
   "Instable",
 ];
-
-// ==========================================
-// ⏳ ÉPOQUES (35 937 combinaisons)
-// ==========================================
 
 const epoques_periode = [
   "Futur",
@@ -222,10 +214,6 @@ const epoques_ton = [
   "Chaotique",
 ];
 
-// ==========================================
-// 🦸‍♂️ PROTAGONISTES (35 937 combinaisons)
-// ==========================================
-
 const persos_role = [
   "Mercenaire",
   "Androïde",
@@ -333,10 +321,6 @@ const persos_trait = [
   "Sauvage",
   "Mélancolique",
 ];
-
-// ==========================================
-// 🎯 ENJEUX (35 937 combinaisons)
-// ==========================================
 
 const enjeux_action = [
   "Sauver",
@@ -446,10 +430,6 @@ const enjeux_twist = [
   "Divin",
 ];
 
-// ==========================================
-// 🎵 AMBIANCES SONORES (35 937 combinaisons)
-// ==========================================
-
 const sons_genre = [
   "Synthwave",
   "Orchestral",
@@ -558,10 +538,6 @@ const sons_mood = [
   "Intense",
 ];
 
-// ==========================================
-// 🎮 GENRE (La structure du jeu)
-// ==========================================
-// J'ai remplacé "Rythme" par "Vibe/Direction Artistique", c'est plus visuel !
 const types_genre = [
   "Rogue-like",
   "Metroidvania",
@@ -604,7 +580,6 @@ const types_vue = [
 ];
 
 const types_rythme = [
-  // Devenu "Direction Artistique / Vibe"
   "Pixel-Art",
   "Low-Poly",
   "Réaliste",
@@ -627,44 +602,33 @@ const types_rythme = [
   "Abstrait",
 ];
 
-// ==========================================
-// 2. MOTEUR D'ANIMATION (SLOT MACHINE)
-// ==========================================
-
-// Fonction de base pour piocher un mot
 function piocher(tableau) {
   return tableau[Math.floor(Math.random() * tableau.length)];
 }
 
-// Fonction qui fait défiler les mots à toute vitesse sur un rouleau spécifique
 function animerRouleau(elementId, tableau, tempsArret) {
   const element = document.getElementById(elementId);
-  element.classList.add("spinning"); // Ajoute l'effet de tremblement/lumière
+  element.classList.add("spinning");
 
   let tempsEcoule = 0;
 
-  // On change le mot toutes les 50 millisecondes
   const intervalle = setInterval(() => {
     element.innerText = piocher(tableau);
     tempsEcoule += 50;
 
-    // Quand le temps d'arrêt est atteint, on stoppe la machine
     if (tempsEcoule >= tempsArret) {
-      clearInterval(intervalle); // Arrête la boucle
-      element.innerText = piocher(tableau); // Tirage définitif
-      element.classList.remove("spinning"); // Retire l'effet visuel
+      clearInterval(intervalle);
+      element.innerText = piocher(tableau);
+      element.classList.remove("spinning");
     }
   }, 50);
 }
 
-// Fonction appelée quand on clique sur le bouton "Tourner" d'une machine
 function lancerMachine(theme) {
-  // Les temps d'arrêt (en millisecondes) créent l'effet de suspense
-  const temps1 = 800; // Le 1er rouleau s'arrête vite
-  const temps2 = 1400; // Le 2ème un peu plus tard
-  const temps3 = 2000; // Le 3ème s'arrête en dernier
+  const temps1 = 800;
+  const temps2 = 1400;
+  const temps3 = 2000;
 
-  // --- ROUE 1 : HISTOIRE ---
   if (theme === "monde") {
     animerRouleau("monde-1", mondes_structure, temps1);
     animerRouleau("monde-2", mondes_element, temps2);
@@ -681,10 +645,7 @@ function lancerMachine(theme) {
     animerRouleau("enjeu-1", enjeux_action, temps1);
     animerRouleau("enjeu-2", enjeux_cible, temps2);
     animerRouleau("enjeu-3", enjeux_twist, temps3);
-  }
-
-  // --- ROUE 2 : GAME DESIGN ---
-  else if (theme === "son") {
+  } else if (theme === "son") {
     animerRouleau("son-1", sons_genre, temps1);
     animerRouleau("son-2", sons_instrument, temps2);
     animerRouleau("son-3", sons_mood, temps3);
